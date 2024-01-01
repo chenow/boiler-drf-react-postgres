@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres:16.1-alpine3.19
+    volumes:
+      - internhub-db:/var/lib/postgresql/data
+    container_name: internhub-db
+    restart: always
+    env_file:
+      - .env.database
+
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    container_name: internhub-backend
+    env_file:
+      - .env.database
+      - backend/.env
+    depends_on:
+      - database
+    restart: always
+    volumes:
+      - ./backend/src-back:/app
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    container_name: internhub-frontend
+    volumes:
+      - ./frontend/src-front:/app/src-front
+      - ./frontend/public:/app/public
+    restart: always
+    depends_on:
+      - backend
+
+volumes:
+  internhub-db:

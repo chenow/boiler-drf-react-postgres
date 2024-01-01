@@ -1,0 +1,16 @@
+{
+  "python.analysis.typeCheckingMode": "basic",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "isort.args": ["--profile", "black"],
+  "python.envFile": "/Users/chenow/Documents/git/internhub/backend/.env",
+  "pylint.args": [
+    "--init-hook",
+    "from dotenv import load_dotenv; load_dotenv('../.env'); load_dotenv('../../.env.database')"
+  ]
+}

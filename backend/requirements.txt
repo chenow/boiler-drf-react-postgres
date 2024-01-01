@@ -1,0 +1,12 @@
+# backend
+django
+djangorestframework
+psycopg2-binary
+djangorestframework-simplejwt
+django-cors-headers
+
+# Fake data
+django-seed
+
+# utils
+python-dotenv

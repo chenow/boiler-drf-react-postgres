@@ -1,0 +1,13 @@
+-r requirements.txt
+
+# docs
+markdown
+
+# linting
+black
+isort
+pylint
+pylint-django
+mypy
+django-stubs[compatible-mypy]
+djangorestframework-stubs[compatible-mypy]

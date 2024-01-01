@@ -1,0 +1,27 @@
+[tool.isort]
+profile = "black"
+
+[tool.pylint.format]
+max-line-length = 120
+
+[tool.pylint.MASTER]
+load-plugins = "pylint_django"
+
+[tool.pylint.pylint_django]
+django-settings-module = "_conf.settings"
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length = 120
+disable = "C0114,C0115,C0116,W0613"
+
+[tool.black]
+line-length = 120
+
+[tool.mypy]
+strict_optional = true
+[plugins]
+mypy_django_plugin.main = {}
+mypy_drf_plugin.main = {}
+
+[tool.mypy.plugins.django-stubs]
+DJANGO_SETTINGS_MODULE = "_conf.settings"
