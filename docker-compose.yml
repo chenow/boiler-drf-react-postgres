@@ -36,6 +36,8 @@ services:
       - ./frontend/src-front:/app/src-front
       - ./frontend/public:/app/public
     restart: always
+    env_file:
+      - frontend/.env
 
 volumes:
   internhub-db:
