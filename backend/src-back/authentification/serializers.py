@@ -5,15 +5,19 @@ from .models import User
 
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):  # pylint: disable=abstract-method
+    def __init__(self, *args, **kwargs) -> None:
+        self.user: User
+        super().__init__(*args, **kwargs)
+
     def validate(self, attrs):
-        self.user : User
+        self.user: User
         data = super().validate(attrs)
         # Add custom claims
         data["is_superuser"] = str(self.user.is_superuser)
         return data
 
 
-class UserRegisterSerializer(serializers.ModelSerializer):
+class UserRegisterSerializer(serializers.ModelSerializer[User]):
     class Meta:
         model = User
         fields = ("id", "email", "password")
