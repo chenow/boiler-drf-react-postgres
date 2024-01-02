@@ -10,7 +10,6 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):  # pylint: dis
         super().__init__(*args, **kwargs)
 
     def validate(self, attrs):
-        self.user: User
         data = super().validate(attrs)
         data["is_superuser"] = str(self.user.is_superuser)
         return data
