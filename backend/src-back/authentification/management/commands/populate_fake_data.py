@@ -15,7 +15,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs) -> None:
         seeder = Seed.seeder()
         test_users_emails = [seeder.faker.email() for _ in range(10)]
-        self.create_superusers(test_users_emails)
+        self.create_test_users(test_users_emails)
 
         super_users_email = os.environ.get("SUPER_USERS_EMAILS", "").split(",")
         self.create_superusers(super_users_email)

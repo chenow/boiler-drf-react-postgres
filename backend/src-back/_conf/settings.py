@@ -116,12 +116,14 @@ if DEBUG:
         "version": 1,
         "disable_existing_loggers": False,
         "formatters": {
-            "verbose": {
-                "format": "{levelname} {asctime} {module} {message}",
-                "style": "{",
-            },
             "colored": {
                 "()": ColoredFormatter,
+            },
+            "colored_time": {
+                "()": ColoredFormatter,
+                "format": "{levelname} - {asctime} - {module} - {message}",
+                "style": "{",
+                "datefmt": "%Y-%m-%d %H:%M:%S",
             },
         },
         "root": {
@@ -132,7 +134,7 @@ if DEBUG:
             "console": {
                 "level": ("INFO"),
                 "class": "logging.StreamHandler",
-                "formatter": "colored",
+                "formatter": "colored_time",
             },
         },
     }

@@ -11,6 +11,6 @@
   "python.envFile": "/Users/chenow/Documents/git/internhub/backend/.env",
   "pylint.args": [
     "--init-hook",
-    "from dotenv import load_dotenv; load_dotenv('../.env'); load_dotenv('../../.env.database')"
+    "from dotenv import load_dotenv; load_dotenv('../.env'); load_dotenv('../../.env.database'); import sys; sys.path.append('.');"
   ]
 }
