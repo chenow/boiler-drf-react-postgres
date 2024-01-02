@@ -12,7 +12,6 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):  # pylint: dis
     def validate(self, attrs):
         self.user: User
         data = super().validate(attrs)
-        # Add custom claims
         data["is_superuser"] = str(self.user.is_superuser)
         return data
 

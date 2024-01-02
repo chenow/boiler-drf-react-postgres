@@ -1,3 +1,6 @@
+[tool.black]
+line-length = 120
+
 [tool.isort]
 profile = "black"
 
@@ -14,8 +17,6 @@ django-settings-module = "_conf.settings"
 max-line-length = 120
 disable = "C0114,C0115,C0116,W0613"
 
-[tool.black]
-line-length = 120
 
 [tool.mypy]
 strict_optional = true
