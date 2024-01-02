@@ -3,7 +3,7 @@ from rest_framework_simplejwt.views import TokenRefreshView
 
 from .views import LoginView, RegisterUserView
 
-app_name = "authentification"  # pylint: disable=invalid-name
+app_name = "authentification"
 
 urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),  # type: ignore

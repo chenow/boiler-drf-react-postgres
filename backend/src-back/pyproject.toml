@@ -21,8 +21,5 @@ disable = "C0114,C0115,C0116,W0613"
 [tool.mypy]
 strict_optional = true
 [plugins]
-mypy_django_plugin.main = {}
+mypy_django_plugin.main = { "django_settings_module" = "_conf.settings" }
 mypy_drf_plugin.main = {}
-
-[tool.mypy.plugins.django-stubs]
-DJANGO_SETTINGS_MODULE = "_conf.settings"

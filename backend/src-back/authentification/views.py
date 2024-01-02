@@ -7,13 +7,13 @@ from .serializers import CustomTokenObtainPairSerializer, UserRegisterSerializer
 
 
 class LoginView(TokenObtainPairView):
-    serializer_class = CustomTokenObtainPairSerializer
-    permission_classes = [AllowAny]
+    serializer_class = CustomTokenObtainPairSerializer  # type: ignore
+    permission_classes = (AllowAny,)  # type: ignore
 
 
 class RegisterUserView(generics.CreateAPIView):
     serializer_class = UserRegisterSerializer
-    permission_classes = [AllowAny]
+    permission_classes = (AllowAny,)
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)

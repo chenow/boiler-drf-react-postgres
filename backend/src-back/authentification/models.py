@@ -9,7 +9,7 @@ class UserManager(BaseUserManager["User"]):
         if not password:
             raise ValueError("The Password field must be set")
         email = self.normalize_email(email)
-        user: "User" = self.model(email=email, **extra_fields)
+        user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save()
         return user
@@ -21,13 +21,13 @@ class UserManager(BaseUserManager["User"]):
 
 
 class User(AbstractUser):
-    username = None
-    first_name = None
-    last_name = None
+    username = None  # type: ignore
+    first_name = None  # type: ignore
+    last_name = None  # type: ignore
     email = models.EmailField(("Adresse mail"), max_length=100, unique=True)
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
-    objects: UserManager = UserManager()
+    objects: UserManager = UserManager()  # type: ignore
 
     class Meta:
         verbose_name = "Utilisateur"
