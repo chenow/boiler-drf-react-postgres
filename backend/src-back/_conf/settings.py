@@ -109,7 +109,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # Logging
 LOGGING_DIR = os.path.join(BASE_DIR, "logs")
-if not os.path.exists(LOGGING_DIR):
+if not os.path.exists(LOGGING_DIR) and not DEBUG:
     os.makedirs(LOGGING_DIR)
 if DEBUG:
     LOGGING = {
