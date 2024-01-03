@@ -1,11 +1,11 @@
 import login, { LoginApiResponse, LoginProps } from '@services/axios/login'
-import { useMutation, useQueryClient } from 'react-query'
+import { useMutation } from 'react-query'
 import { setAccessToken } from './utils'
 
 interface useLoginResponse {
-  isLoading: boolean
-  isError: boolean
-  isSuccess: boolean
+  isLoginLoading: boolean
+  isLoginError: boolean
+  isLoginSuccess: boolean
   accessToken: string | undefined
 }
 
@@ -20,12 +20,10 @@ export const useLogin = ({
   handleUserAlreadyExists,
   onSuccessfulLogin,
 }: useLoginProps): useLoginResponse => {
-  const queryClient = useQueryClient()
-
   const {
-    isLoading,
-    isError,
-    isSuccess,
+    isSuccess: isLoginSuccess,
+    isLoading: isLoginLoading,
+    isError: isLoginError,
     data: accessToken,
   } = useMutation<LoginApiResponse, Error, useLoginProps>(
     () => login({ email, password, handleBadCredentials, handleUserAlreadyExists }),
@@ -33,7 +31,6 @@ export const useLogin = ({
       onSuccess: (data) => {
         if (data.access) {
           setAccessToken(data.access)
-          queryClient.invalidateQueries('user')
         }
         if (onSuccessfulLogin) {
           onSuccessfulLogin()
@@ -41,5 +38,5 @@ export const useLogin = ({
       },
     }
   )
-  return { isLoading, isError, accessToken: accessToken?.access, isSuccess }
+  return { isLoginLoading, isLoginError, isLoginSuccess, accessToken: accessToken?.access }
 }

@@ -25,15 +25,19 @@ class UserViewTests(TestCase):
         self.assertIn("refresh", response.json())
 
     def test_login_wrong_password(self):
-        response = self.client.post(
-            reverse("authentification:login"), {"password": "wrongpassword", "email": self.registered_user["email"]}
-        )
+        response = self.client.post(reverse("authentification:login"), {"password": "wrongpassword", "email": self.registered_user["email"]})
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+        self.assertNotIn("access", response.json())
+        self.assertNotIn("refresh", response.json())
+    
+    def test_missing_email(self):
+        response = self.client.post(reverse("authentification:login"), {"password": "wrongpassword"})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertNotIn("access", response.json())
         self.assertNotIn("refresh", response.json())
 
     def test_register_user_already_exists(self):
         response = self.client.post(reverse("authentification:register"), self.registered_user)
-        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(response.status_code, status.HTTP_409_CONFLICT)
         self.assertEqual(User.objects.count(), 1)
-        self.assertEqual(response.json(), {"email": ["Un objet Utilisateur avec ce champ Adresse mail existe déjà."]})
+        self.assertEqual(response.json(), {"email": ["Un utilisateur avec cette adresse email existe déjà."]})
