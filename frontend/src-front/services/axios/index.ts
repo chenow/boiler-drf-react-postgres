@@ -1,7 +1,10 @@
-import axios from 'axios'
+import axios, { AxiosInstance } from 'axios'
+import setupInterceptors from './interceptors'
 
-const axiosClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
-})
+const apiBaseUrl: string = import.meta.env.VITE_API_BASE_URL
 
-export default axiosClient
+const axiosInstance: AxiosInstance = axios.create({ baseURL: apiBaseUrl })
+
+setupInterceptors(axiosInstance)
+
+export default axiosInstance

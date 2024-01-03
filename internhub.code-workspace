@@ -8,9 +8,6 @@
     },
     {
       "path": "frontend/src-front"
-    },
-    {
-      "path": "../assurecompare-v2/frontend"
     }
   ],
   "settings": {}
