@@ -29,6 +29,7 @@ services:
   frontend:
     build:
       context: ./frontend
+    stop_grace_period: 1s
     ports:
       - "3000:3000"
     container_name: frontend

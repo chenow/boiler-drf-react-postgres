@@ -1,5 +1,7 @@
+import { Typography } from '@mui/material'
+
 function Example() {
-  return <div>Example.component</div>
+  return <Typography>Example.component</Typography>
 }
 
 export default Example
