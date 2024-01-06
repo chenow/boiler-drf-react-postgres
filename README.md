@@ -1,4 +1,4 @@
-# internhub
+# boiler-drf-react-postgres
 
 This repository aims at creating a template project for a web application using React / Typescript, Django / DRF, PostgreSQL. It is intended to be developper friendly, with a set of tools to ease the development process such as linters, formatters, and a dockerized dev environment, Django and React structure laid out etc.
 
