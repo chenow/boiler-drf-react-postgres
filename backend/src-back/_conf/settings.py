@@ -2,12 +2,14 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
-from dotenv import load_dotenv
-
 from .logger import ColoredFormatter
 
-load_dotenv("../.env")
-load_dotenv("../../.env.database")
+if os.environ.get("DEBUG", "TRUE") != "FALSE":  # used to load env files for mypy vscode extension
+    from dotenv import load_dotenv
+
+    load_dotenv("../.env")
+    load_dotenv("../../.env.database")
+
 # Configuration
 BASE_DIR = Path(__file__).resolve().parent.parent
 

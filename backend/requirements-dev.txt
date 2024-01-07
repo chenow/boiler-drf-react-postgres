@@ -11,3 +11,6 @@ djangorestframework-stubs[compatible-mypy]
 
 # tests
 pytest
+
+# utils
+python-dotenv # to load env files for mypy vscode extension

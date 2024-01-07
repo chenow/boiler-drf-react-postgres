@@ -6,7 +6,7 @@ run-backend-tests:
 
 backend-lint:
 	ruff check backend/src-back
-	mypy --config-file backend/src-back/pyproject.toml ./backend/src-back
+	cd backend/src-back && mypy .
 
 backend-format:
 	cd backend && ruff format .
