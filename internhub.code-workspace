@@ -10,5 +10,7 @@
       "path": "frontend/src-front"
     }
   ],
-  "settings": {}
+  "settings": {
+    "evenBetterToml.formatter.indentTables": true
+  }
 }

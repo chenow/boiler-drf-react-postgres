@@ -1,4 +1,4 @@
-import logging
+import logging  # noqa: INP001
 import os
 
 from django.core.management.base import BaseCommand
@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 class Command(BaseCommand):
-    help = "Populates the database with fake user data"
+    command_help = "Populates the database with fake user data"
 
     def handle(self, *args, **kwargs) -> None:
         seeder = Seed.seeder()

@@ -1,15 +1,14 @@
 {
   "python.analysis.typeCheckingMode": "basic",
   "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
     }
   },
-  "isort.args": ["--profile", "black"],
-  "pylint.args": [
-    "--init-hook",
-    "from dotenv import load_dotenv; load_dotenv('../.env'); load_dotenv('../../.env.database'); import sys; sys.path.append('.');"
-  ]
+  "evenBetterToml.schema.associations": {
+    "pyproject.toml": "http://json.schemastore.org/pyproject"
+  },
+  "python.terminal.activateEnvironment": true
 }

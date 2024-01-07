@@ -11,7 +11,7 @@ from authentification.models import User
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ("email", "is_active", "date_joined")
-    list_display_links = ["email"]
+    list_display_links = ["email"]  # noqa: RUF012
     list_filter = ("is_active", "date_joined")
     search_fields = ("email",)
     ordering = ("-date_joined",)

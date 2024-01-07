@@ -2,8 +2,12 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 from .logger import ColoredFormatter
 
+load_dotenv("../.env")
+load_dotenv("../../.env.database")
 # Configuration
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,7 +84,7 @@ DATABASES = {
         "PASSWORD": os.environ["POSTGRES_PASSWORD"],
         "HOST": os.environ["POSTGRES_HOST"],
         "PORT": os.environ["POSTGRES_PORT"],
-    }
+    },
 }
 
 
@@ -103,15 +107,15 @@ USE_TZ = True
 
 # Static and Media files
 STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = BASE_DIR / "static"
 MEDIA_URL = "media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = BASE_DIR / "media"
 
 
 # Logging
-LOGGING_DIR = os.path.join(BASE_DIR, "logs")
-if not os.path.exists(LOGGING_DIR) and not DEBUG:
-    os.makedirs(LOGGING_DIR)
+LOGGING_DIR = BASE_DIR / "logs"
+if not Path.exists(LOGGING_DIR) and not DEBUG:
+    Path.mkdir(LOGGING_DIR)
 if DEBUG:
     LOGGING = {
         "version": 1,
@@ -158,7 +162,7 @@ else:
             "file": {
                 "level": ("INFO"),
                 "class": "logging.FileHandler",
-                "filename": os.path.join(LOGGING_DIR, "django.log"),
+                "filename": LOGGING_DIR / Path("django.log"),
                 "formatter": "verbose",
             },
         },
