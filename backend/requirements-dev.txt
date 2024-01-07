@@ -4,10 +4,10 @@
 markdown
 
 # linting
-black
-isort
-pylint
-pylint-django
+ruff
 mypy
 django-stubs[compatible-mypy]
 djangorestframework-stubs[compatible-mypy]
+
+# tests
+pytest

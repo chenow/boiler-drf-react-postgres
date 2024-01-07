@@ -7,36 +7,39 @@ from .models import User
 
 
 class UserViewTests(TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.client = APIClient()
         self.registered_user = {"password": "testpassword123", "email": "registered@example.com"}
         self.not_registered_user = {"password": "testpassword123", "email": "notregistered@example.com"}
         User.objects.create_user(**self.registered_user)
 
-    def test_register_user(self):
+    def test_register_user(self) -> None:
         response = self.client.post(reverse("authentification:register"), self.not_registered_user)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(User.objects.count(), 2)
 
-    def test_login_user(self):
+    def test_login_user(self) -> None:
         response = self.client.post(reverse("authentification:login"), self.registered_user)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertIn("access", response.json())
         self.assertIn("refresh", response.json())
 
-    def test_login_wrong_password(self):
-        response = self.client.post(reverse("authentification:login"), {"password": "wrongpassword", "email": self.registered_user["email"]})
+    def test_login_wrong_password(self) -> None:
+        response = self.client.post(
+            reverse("authentification:login"),
+            {"password": "wrongpassword", "email": self.registered_user["email"]},
+        )
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
         self.assertNotIn("access", response.json())
         self.assertNotIn("refresh", response.json())
-    
-    def test_missing_email(self):
+
+    def test_missing_email(self) -> None:
         response = self.client.post(reverse("authentification:login"), {"password": "wrongpassword"})
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertNotIn("access", response.json())
         self.assertNotIn("refresh", response.json())
 
-    def test_register_user_already_exists(self):
+    def test_register_user_already_exists(self) -> None:
         response = self.client.post(reverse("authentification:register"), self.registered_user)
         self.assertEqual(response.status_code, status.HTTP_409_CONFLICT)
         self.assertEqual(User.objects.count(), 1)

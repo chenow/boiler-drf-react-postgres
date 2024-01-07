@@ -30,9 +30,9 @@ pip install -r requirements-dev.txt
 
 ## VScode extensions
 
-The project relies on multiple vscode extensions, including:
+The project relies on multiple vscode extensions for linting, type checking, and formatting, including:
 
-- Pylint
+- Ruff
 - Mypy
 - Prettier
 
