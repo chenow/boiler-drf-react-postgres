@@ -6,7 +6,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from .models import User
 
 
-class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):  # pylint: disable=abstract-method
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     def __init__(self, *args, **kwargs) -> None:
         self.user: User
         super().__init__(*args, **kwargs)
