@@ -9,8 +9,5 @@
     {
       "path": "frontend/src-front"
     }
-  ],
-  "settings": {
-    "evenBetterToml.formatter.indentTables": true
-  }
+  ]
 }

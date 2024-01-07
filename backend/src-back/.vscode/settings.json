@@ -1,5 +1,6 @@
 {
   "python.analysis.typeCheckingMode": "basic",
+  "python.terminal.activateEnvironment": true,
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,
@@ -10,5 +11,5 @@
   "evenBetterToml.schema.associations": {
     "pyproject.toml": "http://json.schemastore.org/pyproject"
   },
-  "python.terminal.activateEnvironment": true
+  "evenBetterToml.formatter.indentTables": true
 }
