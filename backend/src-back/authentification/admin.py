@@ -1,10 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
 from rest_framework.authtoken.models import TokenProxy as DRFToken
-from rest_framework_simplejwt.token_blacklist.models import (
-    BlacklistedToken,
-    OutstandingToken,
-)
+from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, OutstandingToken
 
 from authentification.models import User
 
