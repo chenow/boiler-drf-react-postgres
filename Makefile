@@ -5,7 +5,7 @@ run-backend-tests:
 	docker compose run --rm backend python manage.py test
 
 backend-lint:
-	ruff check backend/src-back
+	cd backend && ruff check ./src-back
 	cd backend/src-back && mypy .
 
 backend-format:
