@@ -1,4 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
+
 import setupInterceptors from './interceptors'
 
 const apiBaseUrl: string = import.meta.env.VITE_API_BASE_URL
