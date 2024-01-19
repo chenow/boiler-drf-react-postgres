@@ -1,9 +1,8 @@
-import { createTheme } from '@mui/material/styles'
-
 import PoppinsBold from '@assets/fonts/Poppins-Bold.ttf'
 import PoppinsLight from '@assets/fonts/Poppins-Light.ttf'
 import PoppinsMedium from '@assets/fonts/Poppins-Medium.ttf'
 import PoppinsRegular from '@assets/fonts/Poppins-Regular.ttf'
+import { createTheme } from '@mui/material/styles'
 
 const dark_main = '#1B1B1B'
 const dark_light = '#1B1B1B88'
