@@ -14,12 +14,7 @@ export interface LoginApiResponse {
   refresh: string
 }
 
-const login = async ({
-  email,
-  password,
-  handleBadCredentials,
-  handleUserAlreadyExists,
-}: LoginProps): LoginResponse => {
+const login = async ({ email, password, handleBadCredentials, handleUserAlreadyExists }: LoginProps): LoginResponse => {
   const response = await axiosInstance.post<LoginApiResponse>('/authentification/login', {
     email,
     password,
