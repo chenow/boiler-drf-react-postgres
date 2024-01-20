@@ -28,17 +28,19 @@ source venv/bin/activate
 pip install -r requirements-dev.txt
 ```
 
-## VScode extensions
+## Extensions
 
-The project relies on multiple vscode extensions for linting, type checking, and formatting, including:
+The project relies on multiple extensions for linting, type checking, and formatting, including:
 
 - Ruff
 - Mypy
 - Prettier
+- ESLint
 
 ## Makefile
 
 Some useful commands are available through the Makefile:
 
 - make populate-fake-data: entrypoint to populate the database with fake data
-- make run-backend-tests: run backend tests
+- make tests: run tests for backend and frontend
+- make code-quality: run formatters and linters for backend and frontend
