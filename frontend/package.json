@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --fix 'src-front/**/*.{js,jsx,ts,tsx}'",
-    "format": "prettier --write 'src-front/**/*.{js,jsx,ts,tsx}' --log-level warn"
+    "lint": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}' --log-level warn"
   },
   "dependencies": {
     "@emotion/react": "^11.11.3",

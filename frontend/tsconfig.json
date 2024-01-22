@@ -22,7 +22,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     /* Absolute imports */
-    "baseUrl": "./src-front",
+    "baseUrl": "./src",
     "paths": {
       "@components/*": [
         "./components/*"
@@ -45,7 +45,7 @@
     }
   },
   "include": [
-    "src-front"
+    "src"
   ],
   "references": [
     {

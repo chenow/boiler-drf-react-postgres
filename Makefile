@@ -5,8 +5,8 @@ backend-tests:
 	docker compose run --rm backend python manage.py test
 
 backend-code-quality:
-	cd backend && ruff check ./src-back
-	cd backend/src-back && mypy .
+	cd backend && ruff check ./src
+	cd backend/src && mypy .
 
 frontend-code-quality:
 	cd frontend && npm run format && npm run lint
