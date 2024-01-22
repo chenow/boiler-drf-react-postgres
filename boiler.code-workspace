@@ -4,10 +4,12 @@
       "path": "."
     },
     {
-      "path": "backend/src-back"
+      "path": "backend/src",
+      "name": "backend-src"
     },
     {
-      "path": "frontend/src-front"
+      "path": "frontend/src",
+      "name": "frontend-src"
     }
   ],
   "settings": {

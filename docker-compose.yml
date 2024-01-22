@@ -23,7 +23,7 @@ services:
       - database
     restart: always
     volumes:
-      - ./backend/src-back:/app
+      - ./backend/src:/app
     command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
 
   frontend:
@@ -34,7 +34,7 @@ services:
       - "3000:3000"
     container_name: frontend
     volumes:
-      - ./frontend/src-front:/app/src-front
+      - ./frontend/src:/app/src
       - ./frontend/public:/app/public
     restart: always
     env_file:
