@@ -4,7 +4,7 @@ services:
   database:
     image: postgres:16.1-alpine3.19
     volumes:
-      - internhub-db:/var/lib/postgresql/data
+      - database-volume:/var/lib/postgresql/data
     container_name: database
     restart: always
     env_file:
@@ -41,4 +41,4 @@ services:
       - frontend/.env
 
 volumes:
-  internhub-db:
+  database-volume:
