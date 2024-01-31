@@ -1,11 +1,10 @@
-FROM node:21.5.0-alpine3.19
-ENV NODE_ENV=development
+FROM oven/bun:1.0.25-alpine
 
 WORKDIR /app
 COPY index.html /app/
 COPY tsconfig.json tsconfig.node.json vite.config.ts /app/
-COPY package.json package-lock.json ./
-RUN npm install --no-cache-dir
+COPY package.json bun.lockb ./
+RUN bun install --frozen-lockfile
 
 EXPOSE 3000
-CMD ["npm", "run", "dev"]
+CMD ["bun", "run", "dev"]

@@ -1,21 +1,22 @@
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
-import checker from 'vite-plugin-checker'
-import tsconfigPaths from 'vite-tsconfig-paths'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    tsconfigPaths(),
-    checker({
-      // e.g. use TypeScript check
-      typescript: true,
-    }),
-  ],
+  plugins: [react()],
   server: {
     port: 3000,
     strictPort: true,
     host: true,
+  },
+  resolve: {
+    alias: {
+      '@pages': '/src/pages',
+      '@components': '/src/components',
+      '@utils': '/src/utils',
+      '@hooks': '/src/hooks',
+      '@services': '/src/services',
+      '@assets': '/src/assets',
+    },
   },
 })
