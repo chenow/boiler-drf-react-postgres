@@ -1,7 +1,11 @@
 import { Typography } from '@mui/material'
 
+import { useExample } from './Example.hooks'
+
 function Example() {
-  return <Typography>Example.component</Typography>
+  const { example } = useExample()
+
+  return <Typography>Example.component {example}</Typography>
 }
 
 export default Example

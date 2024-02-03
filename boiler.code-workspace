@@ -36,5 +36,6 @@
       "**/.ruff_cache": true,
       "**/__pycache__": true,
     },
+    "workspace-terminals.switchTerminal": "always",
   },
 }
