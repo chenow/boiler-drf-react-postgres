@@ -1,11 +1,14 @@
 import Cookies from 'js-cookie'
 
+const ACCESS_TOKEN_COOKIE_NAME = 'access_token'
+const LOGIN_URL = '/login'
+
 export function setAccessToken(accessToken: string): void {
-  Cookies.set('access_token', accessToken, { expires: 7 })
+  Cookies.set(ACCESS_TOKEN_COOKIE_NAME, accessToken, { expires: 7 })
 }
 
 export function getAccessToken(): string | null {
-  const cookie = Cookies.get('access_token')
+  const cookie = Cookies.get(ACCESS_TOKEN_COOKIE_NAME)
   if (cookie === undefined) {
     return null
   }
@@ -17,6 +20,6 @@ export function isAuthenticated(): boolean {
 }
 
 export const logout = (): void => {
-  Cookies.remove('access_token')
-  window.location.href = '/login' // Redirect to login page or home page
+  Cookies.remove(ACCESS_TOKEN_COOKIE_NAME)
+  window.location.href = LOGIN_URL // Redirect to login page or home page
 }

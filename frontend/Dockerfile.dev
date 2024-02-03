@@ -4,7 +4,7 @@ WORKDIR /app
 COPY index.html /app/
 COPY tsconfig.json tsconfig.node.json vite.config.ts /app/
 COPY package.json bun.lockb ./
-RUN bun install --frozen-lockfile
+RUN bun install
 
 EXPOSE 3000
 CMD ["bun", "run", "dev"]
