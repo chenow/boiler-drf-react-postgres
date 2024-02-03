@@ -14,6 +14,9 @@ const theme = createTheme({
       main: '#19857b',
     },
   },
+  typography: {
+    fontFamily: 'Poppins, sans-serif',
+  },
   components: {
     MuiCssBaseline: {
       styleOverrides: `
@@ -21,25 +24,29 @@ const theme = createTheme({
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 400;
-          src: local("Poppins"), url(${PoppinsRegular}) format('truetype');
+          font-display: swap;
+          src: local("Poppins"), url(${PoppinsRegular}) format('TrueType');
         }
         @font-face {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 500;
-          src: url(${PoppinsMedium}) format('truetype');
+          font-display: swap;
+          src: url(${PoppinsMedium}) format('TrueType');
         }
         @font-face {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 300;
-          src: url(${PoppinsLight}) format('truetype');
+          font-display: swap;
+          src: url(${PoppinsLight}) format('TrueType');
         }
         @font-face {
           font-family: 'Poppins';
           font-style: normal;
           font-weight: 700;
-          src: url(${PoppinsBold}) format('truetype');
+          font-display: swap;
+          src: url(${PoppinsBold}) format('TrueType');
         }
       `,
     },
