@@ -11,7 +11,7 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  plugins: ['react', 'react-refresh'],
   rules: {
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
   },
@@ -20,5 +20,14 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json', './tsconfig.node.json'],
     tsconfigRootDir: __dirname,
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 }

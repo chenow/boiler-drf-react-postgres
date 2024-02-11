@@ -1,8 +1,10 @@
 FROM oven/bun:1.0.26-alpine
 
 WORKDIR /app
-COPY index.html /app/
-COPY tsconfig.json tsconfig.node.json vite.config.ts /app/
+COPY .env index.html tsconfig.json tsconfig.node.json vite.config.ts \
+    .eslintrc.cjs .prettierrc.cjs bunfig.toml \
+    /app/
+
 COPY package.json bun.lockb ./
 RUN bun install
 
