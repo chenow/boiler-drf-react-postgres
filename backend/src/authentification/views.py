@@ -1,5 +1,4 @@
-from rest_framework import generics, status
-from rest_framework.permissions import AllowAny
+from rest_framework import generics, permissions, status
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
@@ -14,9 +13,9 @@ class LoginView(TokenObtainPairView):
     permission_classes = ()  # No need for authentification
 
 
-class RegisterUserView(generics.CreateAPIView):
+class RegisterUserView(generics.ListCreateAPIView):
     serializer_class = UserRegisterSerializer
-    permission_classes = (AllowAny,)
+    permission_classes = (permissions.AllowAny,)
 
     def create(self, request: Request, *args, **kwargs) -> Response:
         user_email = request.data.get("email")
@@ -31,3 +30,9 @@ class RegisterUserView(generics.CreateAPIView):
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+
+class UsersView(generics.ListAPIView):
+    serializer_class = UserRegisterSerializer
+    queryset = User.objects.all()
+    permission_classes = (permissions.IsAdminUser,)

@@ -1,9 +1,11 @@
 from __future__ import annotations
 
-import typing as t
+import logging
 
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
+
+logger = logging.getLogger(__name__)
 
 
 class UserManager(BaseUserManager["User"]):
@@ -29,7 +31,7 @@ class User(AbstractUser):
     last_name: str = None  # type: ignore
     email = models.EmailField(("Adresse mail"), max_length=100, unique=True)
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS: t.ClassVar[list] = []
+    REQUIRED_FIELDS = []
     objects: UserManager[User] = UserManager()  # type: ignore
 
     def __init__(self, *args, **kwargs) -> None:
@@ -38,7 +40,7 @@ class User(AbstractUser):
     class Meta:
         verbose_name = "Utilisateur"
         verbose_name_plural = "Utilisateurs"
-        ordering: t.ClassVar[list] = ["-date_joined"]
+        ordering = ["-date_joined"]
 
     def __str__(self) -> str:
         return self.email

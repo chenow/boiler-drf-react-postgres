@@ -13,11 +13,13 @@ exclude = ["_env", "migrations"]
 line-length = 120
 target-version = "py312"
 
+
     [tool.ruff.lint]
     ignore = [
         "D100",
         "D101",
         "D102",
+        'D103',
         "D104",
         "D105",
         "D106",
@@ -32,5 +34,9 @@ target-version = "py312"
         "PT009",
         "COM812",
         "ISC001",
+        "RUF012",
+        "TRY003",
+        "G004",
+        "EM101",
     ]
     select = ["ALL"]
