@@ -19,6 +19,8 @@ frontend-code-quality:
 
 
 # ALL
+stop:
+	docker compose stop
 
-code-quality: backend-code-quality frontend-code-quality
-tests: backend-tests frontend-tests
+code-quality: backend-code-quality frontend-code-quality stop
+tests: backend-tests frontend-tests stop
