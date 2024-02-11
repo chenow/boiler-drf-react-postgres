@@ -16,6 +16,10 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "python.analysis.typeCheckingMode": "basic",
+    "isort.args": [
+      "--profile",
+      "ruff"
+    ],
     "python.terminal.activateEnvironment": true,
     "[python]": {
       "editor.defaultFormatter": "charliermarsh.ruff",
@@ -36,7 +40,6 @@
       "**/.ruff_cache": true,
       "**/__pycache__": true,
     },
-    "workspace-terminals.switchTerminal": "always",
     "eslint.runtime": "bun",
     "eslint.execArgv": [
       "--bun"
