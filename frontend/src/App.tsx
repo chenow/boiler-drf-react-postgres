@@ -1,7 +1,7 @@
 import { CssBaseline } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles'
 
-import HomePage from '@pages/HomePage'
+import HomePage from '@pages/showcase/HomePage'
 import theme from '@services/MUI'
 
 function App() {

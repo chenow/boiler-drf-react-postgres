@@ -47,7 +47,10 @@
       ],
       "@assets/*": [
         "./assets/*"
-      ]
+      ],
+      "@libs": [
+        "./libs"
+      ],
     }
   },
   "include": [

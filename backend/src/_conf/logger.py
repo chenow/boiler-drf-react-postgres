@@ -14,7 +14,7 @@ class ColoredFormatter(logging.Formatter):
 
     RESET = "\033[0m"  # Reset color
 
-    def format(self, record: logging.LogRecord) -> str:  # noqa: A003
+    def format(self, record: logging.LogRecord) -> str:
         log_message = super().format(record)
         color = self.COLORS.get(record.levelname, self.RESET)
         return f"{color}{log_message}{self.RESET}"

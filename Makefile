@@ -6,8 +6,9 @@ populate-fake-data:
 backend-tests:
 	docker compose run --rm backend python manage.py test
 backend-code-quality:
-	cd backend && ruff check ./src
-	cd backend/src && mypy .
+	docker compose run --rm backend ruff format . --check
+	docker compose run --rm backend ruff check .
+	docker compose run --rm backend mypy .
 
 
 # FRONTEND
@@ -15,7 +16,8 @@ backend-code-quality:
 frontend-tests:
 	docker compose run --rm frontend bun test
 frontend-code-quality:
-	cd frontend && npm run format && npm run lint
+	docker compose run --rm frontend bun lint
+	docker compose run --rm frontend bun format:check
 
 
 # ALL

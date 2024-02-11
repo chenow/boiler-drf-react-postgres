@@ -37,5 +37,9 @@
       "**/__pycache__": true,
     },
     "workspace-terminals.switchTerminal": "always",
+    "eslint.runtime": "bun",
+    "eslint.execArgv": [
+      "--bun"
+    ],
   },
 }
