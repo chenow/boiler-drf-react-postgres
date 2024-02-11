@@ -1,7 +1,6 @@
 import Cookies from 'js-cookie'
 
-const ACCESS_TOKEN_COOKIE_NAME = 'access_token'
-const LOGIN_URL = '/login'
+import { ACCESS_TOKEN_COOKIE_NAME, LOGIN_URL } from './constants'
 
 export function setAccessToken(accessToken: string): void {
   Cookies.set(ACCESS_TOKEN_COOKIE_NAME, accessToken, { expires: 7 })
