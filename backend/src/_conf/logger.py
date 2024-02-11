@@ -1,10 +1,9 @@
 import logging
-from typing import ClassVar
 
 
 class ColoredFormatter(logging.Formatter):
     # ANSI escape codes for colors
-    COLORS: ClassVar[dict[str, str]] = {
+    COLORS = {
         "DEBUG": "\033[94m",  # Blue
         "INFO": "\033[92m",  # Green
         "WARNING": "\033[93m",  # Yellow

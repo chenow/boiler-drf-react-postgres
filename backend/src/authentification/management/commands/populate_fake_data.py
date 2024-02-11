@@ -17,8 +17,8 @@ class Command(BaseCommand):
         test_users_emails = [seeder.faker.email() for _ in range(10)]
         self.create_test_users(test_users_emails)
 
-        super_users_email = os.environ.get("SUPER_USERS_EMAILS", "").split(",")
-        self.create_superusers(super_users_email)
+        super_users_email = os.environ.get("SUPER_USER", "")
+        self.create_superuser(super_users_email)
 
         logger.info(
             "Successfully populated the database with %d test users and %d super users",
@@ -26,11 +26,11 @@ class Command(BaseCommand):
             len(super_users_email),
         )
 
-    def create_superusers(self, emails: list[str]) -> None:
+    def create_superuser(self, emails: str) -> None:
         for email in emails:
             super_user: User = User.objects.create_superuser(
                 email=email,
-                password=os.environ["SUPER_USERS_PASSWORD"],
+                password=os.environ["SUPER_USER_PASSWORD"],
             )
             super_user.save()
 

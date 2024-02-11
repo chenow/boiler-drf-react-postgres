@@ -10,7 +10,7 @@ schema_view = get_schema_view(
     openapi.Info(
         title="Snippets API",
         default_version="v1",
-        description="Test description",
+        description="Boiler plate for Django Rest Framework",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="contact@snippets.local"),
         license=openapi.License(name="BSD License"),
@@ -20,10 +20,13 @@ schema_view = get_schema_view(
 )
 
 
+prefix = "api/v1"
+
 urlpatterns = [
-    path("swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),  # type: ignore
-    path("admin/", admin.site.urls),
-    path("authentification/", include("authentification.urls")),
+    path(f"{prefix}/swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),  # type: ignore
+    path(f"{prefix}/admin/", admin.site.urls),
+    path(f"{prefix}/authentification/", include("authentification.urls")),
+    path(f"{prefix}/users", include("authentification.urlsusers")),
 ]
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # type: ignore
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
