@@ -1,6 +1,5 @@
-import { AxiosInstance, InternalAxiosRequestConfig } from 'axios'
-
-import { getAccessToken } from '@services/api/auth/utils'
+import { getAccessToken } from '@libs/auth/utils'
+import { type AxiosInstance, type InternalAxiosRequestConfig } from 'axios'
 
 const AUTH_PREFIX = 'JWT'
 

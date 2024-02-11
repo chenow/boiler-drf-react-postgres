@@ -48,8 +48,8 @@
       "@assets/*": [
         "./assets/*"
       ],
-      "@libs": [
-        "./libs"
+      "@libs/*": [
+        "./libs/*"
       ],
     }
   },
