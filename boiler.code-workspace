@@ -13,6 +13,8 @@
     }
   ],
   "settings": {
+    "explorer.compactFolders": false,
+    "explorer.fileNesting.enabled": true,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "python.analysis.typeCheckingMode": "basic",
