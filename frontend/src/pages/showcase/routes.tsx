@@ -1,10 +1,10 @@
 import type { RouteObject } from 'react-router-dom'
 
-import HomePage from './HomePage'
+import Home from './Home'
 
 const showcaseRoutes: RouteObject = {
   path: '/',
-  element: <HomePage />,
+  element: <Home />,
 }
 
 export default showcaseRoutes
