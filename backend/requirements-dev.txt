@@ -14,3 +14,5 @@ pytest
 
 # utils
 python-dotenv # to load env files for mypy vscode extension
+django-extensions
+ptpython

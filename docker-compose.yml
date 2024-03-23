@@ -42,5 +42,22 @@ services:
     env_file:
       - frontend/.env
 
+  shell:
+    scale: 0
+    container_name: shell
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./backend
+    env_file:
+      - .env.database
+      - backend/.env
+    volumes:
+      - ./backend/src:/app
+      - ./backend/.ptpython_history:/root/.ptpython_history
+    entrypoint: python manage.py
+    command: ["shell_plus", "--ptpython"]
+    depends_on:
+      - database
+
 volumes:
   database-volume:
