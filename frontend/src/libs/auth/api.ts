@@ -15,12 +15,10 @@ type LoginApiResponse = {
 }
 
 const loginAPI = async ({ email, password }: LoginApiPayload) => {
-  const response = await axiosInstance
-    .post<LoginApiResponse>('/authentification/login', {
-      email,
-      password,
-    })
-    .catch()
+  const response = await axiosInstance.post<LoginApiResponse>('/authentification/login/', {
+    email,
+    password,
+  })
   if (response.status === BAD_CREDENTIALS_STATUS) {
     console.log('Bad credentials')
   }
@@ -30,8 +28,8 @@ const loginAPI = async ({ email, password }: LoginApiPayload) => {
   return response.data
 }
 
-export const useLogin = ({ email, password }: LoginApiPayload) => {
-  return useMutation<LoginApiResponse, Error, LoginApiPayload>(() => loginAPI({ email, password }), {
+export const useLogin = () => {
+  return useMutation<LoginApiResponse, Error, LoginApiPayload>(loginAPI, {
     onSuccess: (data) => {
       setAccessToken(data.access)
     },
