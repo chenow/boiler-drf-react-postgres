@@ -13,7 +13,7 @@ class LoginView(TokenObtainPairView):
     permission_classes = ()  # No need for authentification
 
 
-class RegisterUserView(generics.ListCreateAPIView):
+class RegisterUserView(generics.CreateAPIView):
     serializer_class = UserRegisterSerializer
     permission_classes = (permissions.AllowAny,)
 

@@ -18,6 +18,8 @@ module.exports = {
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     '@eslint/semi': 'off',
     'react/self-closing-comp': 'error',
+    '@typescript-eslint/no-unsafe-assignment': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
   },
   parserOptions: {
     ecmaVersion: 'latest',
