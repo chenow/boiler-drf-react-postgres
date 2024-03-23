@@ -14,6 +14,7 @@ backend-code-quality:
 # FRONTEND
 
 frontend-tests:
+	docker compose run --rm frontend bunx tsc
 	docker compose run --rm frontend bun test
 frontend-code-quality:
 	docker compose run --rm frontend bun lint
