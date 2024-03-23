@@ -11,6 +11,7 @@ djangorestframework-stubs[compatible-mypy]
 
 # tests
 pytest
+pytest-django
 
 # utils
 python-dotenv # to load env files for mypy vscode extension

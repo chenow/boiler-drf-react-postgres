@@ -2,9 +2,9 @@
 # BACKEND
 
 populate-fake-data:
-	docker compose run --rm backend python manage.py populate_fake_data
+	docker compose run --rm shell populate_fake_data
 backend-tests:
-	docker compose run --rm backend python manage.py test
+	docker compose run --rm backend pytest
 backend-code-quality:
 	docker compose run --rm backend ruff format . --check
 	docker compose run --rm backend ruff check .

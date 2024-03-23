@@ -8,6 +8,10 @@ plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
 [tool.django-stubs]
 django_settings_module = "_conf.settings"
 
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "_conf.settings"
+python_files = ["*/test*.py"]
+
 [tool.ruff]
 exclude = ["_env", "migrations"]
 line-length = 120
