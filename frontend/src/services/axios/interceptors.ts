@@ -6,7 +6,9 @@ const AUTH_PREFIX = 'JWT'
 const setupInterceptors = (axiosInstance: AxiosInstance): void => {
   axiosInstance.interceptors.request.use((config: InternalAxiosRequestConfig): InternalAxiosRequestConfig => {
     const token = getAccessToken()
-    config.headers.Authorization = `${AUTH_PREFIX} ${token}`
+    if (token) {
+      config.headers.Authorization = `${AUTH_PREFIX} ${token}`
+    }
     return config
   })
 }
