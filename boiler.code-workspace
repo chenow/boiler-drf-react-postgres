@@ -17,6 +17,9 @@
     "explorer.fileNesting.enabled": true,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "always",
+    },
     "python.analysis.typeCheckingMode": "basic",
     "isort.args": [
       "--profile",
@@ -42,9 +45,5 @@
       "**/.ruff_cache": true,
       "**/__pycache__": true,
     },
-    "eslint.runtime": "bun",
-    "eslint.execArgv": [
-      "--bun"
-    ],
   },
 }
