@@ -22,8 +22,10 @@ const loginAPI = async ({ email, password }: LoginApiPayload) => {
     })
     .catch()
   if (response.status === BAD_CREDENTIALS_STATUS) {
+    console.log('Bad credentials')
   }
   if (response.status === USER_ALREADY_EXISTS_STATUS) {
+    console.log('User already exists')
   }
   return response.data
 }
