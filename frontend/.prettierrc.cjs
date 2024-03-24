@@ -5,7 +5,7 @@ module.exports = {
   printWidth: 120,
   tabWidth: 2,
   plugins: [require.resolve('@trivago/prettier-plugin-sort-imports')],
-  importOrder: ['^(?:@assets|@components|@pages|@services|@utils)/(.*)$', '^[./]', '^[../]'],
+  importOrder: ['^(?:#assets|#components|#pages|#services|#utils|#libs)/(.*)$', '^[./]', '^[../]'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   importOrderCaseInsensitive: true,

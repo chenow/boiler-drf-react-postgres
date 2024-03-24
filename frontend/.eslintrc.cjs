@@ -20,6 +20,7 @@ module.exports = {
     'react/self-closing-comp': 'error',
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
+    'react-refresh/only-export-components': 'off',
   },
   parserOptions: {
     ecmaVersion: 'latest',

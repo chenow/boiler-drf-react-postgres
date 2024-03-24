@@ -1,6 +1,6 @@
 import { useMutation } from 'react-query'
 
-import axiosInstance from '@services/axios'
+import axiosInstance from '#services/axios'
 
 import { BAD_CREDENTIALS_STATUS, USER_ALREADY_EXISTS_STATUS } from './constants'
 import { setAccessToken } from './utils'

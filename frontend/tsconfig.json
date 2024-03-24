@@ -30,25 +30,25 @@
     /* Absolute imports */
     "baseUrl": "./src",
     "paths": {
-      "@components/*": [
+      "#components/*": [
         "./components/*"
       ],
-      "@pages/*": [
+      "#pages/*": [
         "./pages/*"
       ],
-      "@utils/*": [
+      "#utils/*": [
         "./utils/*"
       ],
       "@hooks/*": [
         "./hooks/*"
       ],
-      "@services/*": [
+      "#services/*": [
         "./services/*"
       ],
-      "@assets/*": [
+      "#assets/*": [
         "./assets/*"
       ],
-      "@libs/*": [
+      "#libs/*": [
         "./libs/*"
       ],
     }

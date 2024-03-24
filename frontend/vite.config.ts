@@ -11,13 +11,13 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@pages': '/src/pages',
-      '@components': '/src/components',
-      '@utils': '/src/utils',
+      '#pages': '/src/pages',
+      '#components': '/src/components',
+      '#utils': '/src/utils',
       '@hooks': '/src/hooks',
-      '@services': '/src/services',
-      '@assets': '/src/assets',
-      '@libs': '/src/libs',
+      '#services': '/src/services',
+      '#assets': '/src/assets',
+      '#libs': '/src/libs',
     },
   },
 })
