@@ -21,6 +21,7 @@ module.exports = {
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
     'react-refresh/only-export-components': 'off',
+    'react/jsx-boolean-value': 'error',
   },
   parserOptions: {
     ecmaVersion: 'latest',
