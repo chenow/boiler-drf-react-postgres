@@ -7,8 +7,8 @@
     "dev": "bunx --bun vite",
     "build": "tsc && vite build",
     "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "format": "bun prettier --write 'src/**/*.{js,jsx,ts,tsx}' --log-level warn",
-    "format:check": "bun prettier --check 'src/**/*.{js,jsx,ts,tsx}' --log-level warn",
+    "format": "bun run prettier --write 'src/**/*.{js,jsx,ts,tsx}' --log-level warn",
+    "format:check": "bun run prettier --check 'src/**/*.{js,jsx,ts,tsx}' --log-level warn",
     "test": "bunx --bun test"
   },
   "dependencies": {
