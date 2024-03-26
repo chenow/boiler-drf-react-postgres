@@ -8,7 +8,7 @@
     "module": "ESNext",
     "moduleDetection": "force",
     "jsx": "react-jsx", // support JSX
-    "allowJs": true, // allow importing `.js` from `.ts`
+    "allowJs": false, // allow importing `.js` from `.ts`
     // Bundler mode
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -39,7 +39,7 @@
       "#utils/*": [
         "./utils/*"
       ],
-      "@hooks/*": [
+      "#hooks/*": [
         "./hooks/*"
       ],
       "#services/*": [
