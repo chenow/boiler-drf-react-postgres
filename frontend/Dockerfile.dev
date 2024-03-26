@@ -1,8 +1,7 @@
 FROM oven/bun:1.0.35-alpine
 
 WORKDIR /app
-COPY .env index.html tsconfig.json tsconfig.node.json vite.config.ts \
-    .eslintrc.cjs .prettierrc.cjs bunfig.toml \
+COPY .env index.html tsconfig.json tsconfig.node.json vite.config.ts bunfig.toml \
     /app/
 
 COPY package.json bun.lockb ./
