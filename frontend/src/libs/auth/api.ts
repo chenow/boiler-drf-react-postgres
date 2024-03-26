@@ -1,4 +1,4 @@
-import { useMutation } from 'react-query'
+import { useMutation } from '@tanstack/react-query'
 
 import axiosInstance from '#services/axios'
 
@@ -29,9 +29,11 @@ const loginAPI = async ({ email, password }: LoginApiPayload) => {
 }
 
 export const useLogin = () => {
-  return useMutation<LoginApiResponse, Error, LoginApiPayload>(loginAPI, {
+  return useMutation({
+    mutationFn: loginAPI,
     onSuccess: (data) => {
       setAccessToken(data.access)
     },
+    mutationKey: ['login'],
   })
 }
