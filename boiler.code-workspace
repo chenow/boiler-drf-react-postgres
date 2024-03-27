@@ -45,5 +45,14 @@
       "**/.ruff_cache": true,
       "**/__pycache__": true,
     },
+    "emmet.includeLanguages": {
+      "django-html": "html"
+    },
+    "files.associations": {
+      "*.html": "django-html",
+    },
+    "[html][django-html][handlebars][hbs][mustache][jinja][jinja-html][nj][njk][nunjucks][twig]": {
+      "editor.defaultFormatter": "monosans.djlint"
+    },
   },
 }
