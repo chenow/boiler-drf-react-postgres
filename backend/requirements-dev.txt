@@ -13,3 +13,4 @@ djlint
 # tests
 pytest
 pytest-django
+pytest-xdist

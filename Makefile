@@ -4,7 +4,7 @@
 populate-fake-data:
 	docker compose run --rm shell populate_fake_data
 backend-tests:
-	docker compose run --rm backend pytest
+	docker compose run --rm backend pytest -n auto
 backend-code-quality:
 	docker compose run --rm backend ruff format . --check
 	docker compose run --rm backend ruff check .
