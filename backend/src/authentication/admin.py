@@ -3,7 +3,7 @@ from django.contrib.auth.models import Group
 from rest_framework.authtoken.models import TokenProxy as DRFToken
 from rest_framework_simplejwt.token_blacklist.models import BlacklistedToken, OutstandingToken
 
-from authentification.models import User
+from .models import User
 
 
 class UserAdmin(admin.ModelAdmin):

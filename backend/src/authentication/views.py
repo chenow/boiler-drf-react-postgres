@@ -3,14 +3,14 @@ from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from authentification.models import User
+from authentication.models import User
 
 from .serializers import CustomTokenObtainPairSerializer, UserRegisterSerializer
 
 
 class LoginView(TokenObtainPairView):
     serializer_class = CustomTokenObtainPairSerializer  # type: ignore
-    permission_classes = ()  # No need for authentification
+    permission_classes = ()  # No need for authentication
 
 
 class RegisterUserView(generics.CreateAPIView):

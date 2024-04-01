@@ -15,7 +15,7 @@ type LoginApiResponse = {
 }
 
 const loginAPI = async ({ email, password }: LoginApiPayload) => {
-  const response = await axiosInstance.post<LoginApiResponse>('/authentification/login/', {
+  const response = await axiosInstance.post<LoginApiResponse>('/authentication/login/', {
     email,
     password,
   })

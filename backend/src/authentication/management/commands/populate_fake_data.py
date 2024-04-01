@@ -2,7 +2,7 @@ import logging
 
 from django.core.management.base import BaseCommand
 
-from authentification.factories import UserFactory
+from authentication.factories import UserFactory
 from utils import get_test_superuser_credentials
 
 logger = logging.getLogger(__name__)

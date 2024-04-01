@@ -5,7 +5,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from authentification.models import User
+from authentication.models import User
 
 logger = logging.getLogger(__name__)
 

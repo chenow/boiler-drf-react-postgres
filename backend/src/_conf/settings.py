@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
-    "authentification.apps.AuthentificationConfig",
+    "authentication.apps.AuthenticationConfig",
     "drf_yasg",
 ]
 MIDDLEWARE = [
@@ -93,7 +93,7 @@ DATABASES = {
 
 
 # Authentification
-AUTH_USER_MODEL = "authentification.User"
+AUTH_USER_MODEL = "authentication.User"
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -179,7 +179,7 @@ SWAGGER_SETTINGS = {
         "JWT": {"type": "apiKey", "name": "Authorization", "in": "header"},
     },
     "USE_SESSION_AUTH": True,
-    "LOGIN_URL": "authentification:login",
+    "LOGIN_URL": "authentication:login",
 }
 
 

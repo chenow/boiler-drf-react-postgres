@@ -25,8 +25,8 @@ prefix = "api/v1"
 urlpatterns = [
     path(f"{prefix}/swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger-ui"),  # type: ignore
     path(f"{prefix}/admin/", admin.site.urls),
-    path(f"{prefix}/authentification/", include("authentification.urls")),
-    path(f"{prefix}/users", include("authentification.urlsusers")),
+    path(f"{prefix}/authentication/", include("authentication.urls")),
+    path(f"{prefix}/users", include("authentication.urlsusers")),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
