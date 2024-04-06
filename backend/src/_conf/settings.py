@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
     "authentication.apps.AuthenticationConfig",
+    "mails.apps.MailsConfig",
     "drf_yasg",
 ]
 MIDDLEWARE = [
@@ -205,3 +206,8 @@ TEMPLATES = [  # for admin site
         },
     },
 ]
+
+
+# Emails
+EMAIL_SENDER = os.environ.get("EMAIL_SENDER")
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
