@@ -18,6 +18,7 @@ python-dotenv = "*"
 ptpython = "*"
 django-extensions = "*"
 factory-boy = "*"
+gunicorn = "*"
 
 [dev-packages]
 markdown = "*"
