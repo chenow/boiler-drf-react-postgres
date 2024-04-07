@@ -54,5 +54,8 @@
     "[html][django-html][handlebars][hbs][mustache][jinja][jinja-html][nj][njk][nunjucks][twig]": {
       "editor.defaultFormatter": "monosans.djlint"
     },
+    "yaml.schemas": {
+      "https://json.schemastore.org/github-workflow.json": "file:///Users/chenow/Documents/git/boiler-drf-react-postgres/.github/workflows/deploy.yaml"
+    },
   },
 }

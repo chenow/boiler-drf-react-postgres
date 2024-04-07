@@ -1,0 +1,42 @@
+name: Build and Push to Artifact Registry
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+env:
+  PROJECT_ID: boilder-react-drf-postges
+  REGION: europe-west9
+  GAR_LOCATION: europe-west9-docker.pkg.dev/boilder-react-drf-postges/backend/backend
+
+jobs:
+  build-push-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v4"
+
+      - id: "auth"
+        name: "Authenticate to Google Cloud"
+        uses: "google-github-actions/auth@v2"
+        with:
+          credentials_json: "${{ secrets.SERVICE_ACCOUNT_KEY }}"
+
+      - name: "Set up Cloud SDK"
+        uses: "google-github-actions/setup-gcloud@v1"
+
+      - name: "Use gcloud CLI"
+        run: "gcloud info"
+
+      - name: "Docker auth"
+        run: |-
+          gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
+
+      - name: Build image
+        run: docker build . --file ./Dockerfile.prod --tag ${{ env.GAR_LOCATION }}
+        working-directory: ./backend
+
+      - name: Push image
+        run: docker push ${{ env.GAR_LOCATION }}
