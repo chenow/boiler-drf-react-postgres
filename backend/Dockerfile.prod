@@ -53,4 +53,3 @@ USER app
 
 # Run gunicorn
 CMD gunicorn _conf.wsgi:application --bind 0.0.0.0:8000
-
