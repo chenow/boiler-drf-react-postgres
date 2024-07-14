@@ -1,3 +1,32 @@
+[project]
+name = "boiler-drf-react-postgres-backend"
+description = "Boilerplate Django REST Framework backend for a React frontend with a PostgreSQL database."
+version = "2020.0.0"
+readme = "README.md"
+requires-python = "==3.12.4"
+dependencies = [
+    "django",
+    "djangorestframework",
+    "psycopg2-binary",
+    "djangorestframework-simplejwt",
+    "django-cors-headers",
+    "drf-yasg",
+    "sendgrid",
+    "python-dotenv",
+    "ptpython",
+    "django-extensions",
+    "gunicorn",
+]
+
+    [project.optional-dependencies]
+    static-typing = [
+        "mypy",
+        "django-stubs[compatible-mypy]",
+        "djangorestframework-stubs[compatible-mypy]",
+    ]
+    tests = ["factory-boy"]
+    code-quality = ["djlint", "ruff"]
+
 [tool.mypy]
 exclude                = [".venv", "migrations"]
 ignore_missing_imports = true
