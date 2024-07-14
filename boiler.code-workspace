@@ -17,17 +17,31 @@
     "explorer.fileNesting.enabled": true,
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
+    "ruff.fixAll": true,
+    "ruff.lint.args": [
+      "--config",
+      "${workspaceFolder}/../pyproject.toml"
+    ],
+    "ruff.format.args": [
+      "--config",
+      "${workspaceFolder}/../pyproject.toml"
+    ],
+    "mypy-type-checker.args": [
+      "--config-file",
+      "${workspaceFolder}/../pyproject.toml"
+    ],
+    "python.defaultInterpreterPath": "/Users/chenow/Documents/git/boiler-drf-react-postgres/.venv/bin/python",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "always",
     },
     "python.analysis.typeCheckingMode": "basic",
-    "isort.args": [
-      "--profile",
-      "ruff"
-    ],
     "python.terminal.activateEnvironment": true,
     "[python]": {
       "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.codeActionsOnSave": {
+        "source.fixAll": "always",
+        "source.organizeImports": "always"
+      }
     },
     "[typescript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode",

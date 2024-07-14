@@ -16,6 +16,7 @@ python_files = ["*/test*.py"]
 exclude = ["_env", "migrations"]
 line-length = 120
 target-version = "py312"
+src            = ["./src"]
 
 
     [tool.ruff.lint]
