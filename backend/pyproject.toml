@@ -1,23 +1,22 @@
 [tool.mypy]
-exclude = ["_env", "migrations"]
+exclude                = [".venv", "migrations"]
 ignore_missing_imports = true
-python_version = "3.12"
-strict_optional = true
-plugins = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
+python_version         = "3.12"
+strict_optional        = true
+plugins                = ["mypy_django_plugin.main", "mypy_drf_plugin.main"]
 
 [tool.django-stubs]
 django_settings_module = "_conf.settings"
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "_conf.settings"
-python_files = ["*/test*.py"]
+python_files           = ["*/test*.py"]
 
 [tool.ruff]
-exclude = ["_env", "migrations"]
-line-length = 120
+exclude        = ["_env", "migrations"]
+line-length    = 120
 target-version = "py312"
 src            = ["./src"]
-
 
     [tool.ruff.lint]
     ignore = [
