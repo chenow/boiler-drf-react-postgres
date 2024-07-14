@@ -13,12 +13,12 @@ RUN apk update \
     # && apk add postgresql-dev \
     # # Translations dependencies
     # && apk add gettext \
-    # # Install pipenv and compilation dependencies
+    # # Install uv and compilation dependencies
     && pip install --upgrade pip \
-    && pip install pipenv
+    && pip install uv
 
-COPY Pipfile Pipfile.lock ./
-RUN pipenv install --system --ignore-pipfile
+COPY requirements.txt ./
+RUN uv pip install --system -r requirements.txt
 
 # ---- Production Stage ----
 FROM python:3.12.4-alpine3.19 as production

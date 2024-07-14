@@ -5,9 +5,9 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-RUN pip install --upgrade pip && pip install pipenv
-COPY Pipfile Pipfile.lock ./
-RUN pipenv install --dev --system --ignore-pipfile
+COPY requirements-dev.txt ./
+RUN pip install --upgrade pip && pip install uv
+RUN uv pip install --system -r requirements-dev.txt
 
 EXPOSE 8000
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
