@@ -14,11 +14,11 @@ RUN apk update \
     # # Translations dependencies
     # && apk add gettext \
     # # Install uv and compilation dependencies
-    && pip install --upgrade pip \
-    && pip install uv
+    && pip install --upgrade pip --no-cache-dir \
+    && pip install uv --no-cache-dir
 
 COPY requirements.txt ./
-RUN uv pip install --system -r requirements.txt
+RUN uv pip install --system -r requirements.txt --no-cache
 
 # ---- Production Stage ----
 FROM python:3.12.4-alpine3.19 as production
