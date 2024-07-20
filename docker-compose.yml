@@ -24,8 +24,8 @@ services:
       - database
     restart: always
     volumes:
-      - ./backend/src:/app
-    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+      - ./backend/src:/app/src
+      - ./backend/pyproject.toml:/app/pyproject.toml
 
   frontend:
     build:
