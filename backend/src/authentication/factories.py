@@ -1,7 +1,7 @@
 import factory
 from django.contrib.auth.hashers import make_password
 
-from utils import MetaFactory
+from boiler.typing import MetaFactory
 
 from .models import User
 

@@ -1,6 +1,3 @@
-from __future__ import annotations
-
-import os
 import typing as t
 
 from factory.django import DjangoModelFactory
@@ -22,10 +19,3 @@ class MetaFactory(DjangoModelFactory, t.Generic[T]):
 
     def save(self, *args, **kwargs) -> None:
         return super().save(*args, **kwargs)  # type: ignore
-
-
-def get_test_superuser_credentials() -> dict:
-    return {
-        "email": os.environ.get("SUPER_USER"),
-        "password": os.environ.get("SUPER_USER_PASSWORD"),
-    }

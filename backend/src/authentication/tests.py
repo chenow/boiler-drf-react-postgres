@@ -3,9 +3,8 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APIClient
 
-from utils import get_test_superuser_credentials
-
 from .models import User
+from .utils import get_test_superuser_credentials
 
 
 class UserViewTests(TestCase):
