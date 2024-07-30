@@ -9,7 +9,7 @@ services:
     restart: always
     env_file:
       - .env.database
- 
+
   backend:
     container_name: backend
     build:
